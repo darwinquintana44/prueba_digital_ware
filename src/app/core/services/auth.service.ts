@@ -43,23 +43,5 @@ export class AuthService {
    */
   estaAutenticado(){
     return this.peticiones.estaAutenticado();
-    // if ( !localStorage.getItem('isLoggedin') || !localStorage.getItem('token') ) {
-    //   return false;
-    // }
-
-    // const expira = Number( localStorage.getItem('expira') );
-    // const expiraDate: Date = new Date();
-
-    // expiraDate.setTime(expira);
-
-    // if( expiraDate > new Date() ){
-    //   return true;
-    // }else{
-    //   localStorage.removeItem('token');
-    //   localStorage.removeItem('isLoggedin');
-    //   localStorage.removeItem('expira');
-    //   return false;
-    // }
-
   }
 }

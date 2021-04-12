@@ -1,0 +1,63 @@
+<div *ngIf="cargando" class="spinner-wrapper">
+  <div class="spinner">Cargando...</div>
+</div>
+
+<div *ngIf="!cargando" class="row">
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+
+        <h2 class="card-title mb-0">CREACIÓN Y/O EDICION DE LA AERONAVE</h2>
+        <div class="mb-2">
+          <button [routerLink]="['/aeronaves/listado']" class="btn btn-outline-danger btn-lg">
+            <i class="fa fa-arrow-left">
+              Regresar a Aeronave
+            </i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!cargando" class="row">
+  <div class="col-md-12 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <!-- <h6 class="card-title">Listado de Bancos</h6> -->
+        <div class="row">
+          <div class="col">
+            <form (ngSubmit)="guardar(f)" #f="ngForm">
+              <div class="form-group" style="display: none;">
+                <label for="idInterno">ID interno</label>
+                <input [(ngModel)]="aeronave.id" id="idInterno" name="idInterno" type="text" class="form-control" disabled="disabled" placeholder="ID interno">
+                <small class="form-text text-muted">Este campo se genera de manera automática por el sistema</small>
+              </div>
+              <div class="form-group">
+                <label for="descripcion">Nombre Completo Aeronave</label>
+                <input [(ngModel)]="aeronave.nombre_completo" required id="descripcion" name="descripcion" type="text" class="form-control" placeholder="Nombre Completo de la aeronave">
+              </div>
+              <div class="form-group">
+                <label for="nro_identificacion">Codigo de Identificación</label>
+                <input [(ngModel)]="aeronave.numero_identificacion" required id="nro_identificacion" name="nro_identificacion" type="text" class="form-control" placeholder="Nro de identificación de la aeronave">
+              </div>
+              <div class="form-group">
+                <label for="observaciones">Dirección</label>
+                <input [(ngModel)]="aeronave.observaciones" required id="observaciones" name="observaciones" type="text" class="form-control" placeholder="Observaciones de la aeronave">
+              </div>
+              <hr>
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-outline-success btn-lg">
+                  <i class="fa fa-save">
+                    Guardar Información
+                  </i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

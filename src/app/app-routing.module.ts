@@ -16,6 +16,22 @@ const routes: Routes = [
         path: 'dashboard',
         loadChildren: () => import('./views/pages/dashboard/dashboard.module').then(m => m.DashboardModule)
       },
+      {
+        path: 'herramientas',
+        loadChildren: () => import('./views/pages/usuarios/usuarios.module').then(m => m.UsuariosModule)
+      },
+      {
+        path: 'pasajeros',
+        loadChildren: () => import('./views/pages/pasajeros/pasajeros.module').then(m => m.PasajerosModule)
+      },
+      {
+        path: 'pilotos',
+        loadChildren: () => import('./views/pages/pilotos/pilotos.module').then(m => m.PilotosModule)
+      },
+      {
+        path: 'aeronaves',
+        loadChildren: () => import('./views/pages/aeronaves/aeronaves.module').then(m => m.AeronavesModule)
+      },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }, // redireccionamos al home cuando no exista una ruta
       { path: '**', redirectTo: 'dashboard', pathMatch: 'full' } // redireccionamos al home cuando la ruta no sea valida
     ]

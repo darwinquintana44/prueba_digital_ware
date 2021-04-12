@@ -1,0 +1,66 @@
+<div *ngIf="cargando" class="spinner-wrapper">
+  <div class="spinner">Cargando...</div>
+</div>
+
+<div *ngIf="!cargando" class="row">
+  <div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+
+        <h2 class="card-title mb-0">CREACIÓN Y/O EDICION DEL PILOTO</h2>
+        <div class="mb-2">
+          <button [routerLink]="['/pilotos/listado']" class="btn btn-outline-danger btn-lg">
+            <i class="fa fa-arrow-left">
+              Regresar a Pilotos
+            </i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!cargando" class="row">
+  <div class="col-md-12 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <form (ngSubmit)="guardar(f)" #f="ngForm">
+              <div class="form-group" style="display: none;">
+                <label for="idInterno">ID interno</label>
+                <input [(ngModel)]="piloto.id" id="idInterno" name="idInterno" type="text" class="form-control" disabled="disabled" placeholder="ID interno">
+                <small class="form-text text-muted">Este campo se genera de manera automática por el sistema</small>
+              </div>
+              <div class="form-group">
+                <label for="descripcion">Nombre Completo Piloto</label>
+                <input [(ngModel)]="piloto.nombre_completo" required id="descripcion" name="descripcion" type="text" class="form-control" placeholder="Nombre Completo del Piloto">
+              </div>
+              <div class="form-group">
+                <label for="nro_identificacion">Número de Identificación</label>
+                <input [(ngModel)]="piloto.nro_identificacion" required id="nro_identificacion" name="nro_identificacion" type="text" class="form-control" placeholder="Nro de identificación del Piloto">
+              </div>
+              <div class="form-group">
+                <label for="direccion">Dirección</label>
+                <input [(ngModel)]="piloto.direccion" required id="direccion" name="direccion" type="text" class="form-control" placeholder="Direccion del piloto">
+              </div>
+              <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input [(ngModel)]="piloto.telefono" required id="telefono" name="telefono" type="text" class="form-control" placeholder="Telefono del piloto">
+              </div>
+              <hr>
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-outline-success btn-lg">
+                  <i class="fa fa-save">
+                    Guardar Información
+                  </i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

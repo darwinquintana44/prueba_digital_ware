@@ -15,7 +15,7 @@ export const MENUADMIN: MenuItem[] = [
         subItems: [
           {
             label: 'Listar Datos',
-            link: '/global/estados-generales'
+            link: '/herramientas/usuarios/listado'
           }
         ]
       }
@@ -27,31 +27,41 @@ export const MENUADMIN: MenuItem[] = [
   },
   {
     label: 'Pasajeros',
-    icon: 'users',
+    icon: 'user',
     subItems: [
       {
         label: 'Listar Datos',
-        link: '/apps/email/inbox',
+        link: '/pasajeros/listado',
       }
     ]
   },
   {
     label: 'Piloto',
+    icon: 'user',
+    subItems: [
+      {
+        label: 'Listar Datos',
+        link: '/pilotos/listado',
+      }
+    ]
+  },
+  {
+    label: 'Aero Naves',
     icon: 'users',
     subItems: [
       {
         label: 'Listar Datos',
-        link: '/apps/email/inbox',
+        link: '/aeronaves/listado',
       }
     ]
   },
   {
     label: 'Alquiler Aero Naves',
-    icon: 'calendar',
+    icon: 'users',
     subItems: [
       {
-        label: 'Listar Datos',
-        link: '/apps/email/inbox',
+        label: 'Alquilar',
+        link: '/aeronaves/alquiler',
       }
     ]
   }
@@ -64,21 +74,31 @@ export const MENUPILOTO: MenuItem[] = [
   },
   {
     label: 'Piloto',
-    icon: 'users',
+    icon: 'user',
     subItems: [
       {
         label: 'Listar Datos',
-        link: '/apps/email/inbox',
+        link: '/pilotos/listado',
+      }
+    ]
+  },
+  {
+    label: 'Aero Naves',
+    icon: 'calendar',
+    subItems: [
+      {
+        label: 'Listar Datos',
+        link: '/aeronaves/listado',
       }
     ]
   },
   {
     label: 'Alquiler Aero Naves',
-    icon: 'calendar',
+    icon: 'users',
     subItems: [
       {
-        label: 'Listar Datos',
-        link: '/apps/email/inbox',
+        label: 'Alquilar',
+        link: '/aeronaves/alquiler',
       }
     ]
   }
@@ -91,22 +111,12 @@ export const MENUPASAJERO: MenuItem[] = [
   },
   {
     label: 'Pasajeros',
-    icon: 'users',
+    icon: 'user',
     subItems: [
       {
         label: 'Listar Datos',
-        link: '/apps/email/inbox',
+        link: '/pasajeros/listado',
       }
     ]
   },
-  {
-    label: 'Alquiler Aero Naves',
-    icon: 'calendar',
-    subItems: [
-      {
-        label: 'Listar Datos',
-        link: '/apps/email/inbox',
-      }
-    ]
-  }
 ];

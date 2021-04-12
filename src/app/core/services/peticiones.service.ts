@@ -158,7 +158,7 @@ export class PeticionesService {
     localStorage.setItem("token", this.userToken);
 
     const hoy: Date = new Date();
-    hoy.setSeconds(Number(tokenExpire) * 60);
+    hoy.setSeconds(Number(tokenExpire));
 
     localStorage.setItem("expira", hoy.getTime().toString());
   }

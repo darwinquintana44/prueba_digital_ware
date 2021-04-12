@@ -1,0 +1,45 @@
+<div *ngIf="cargando" class="spinner-wrapper">
+  <div class="spinner">Cargando...</div>
+</div>
+
+<div class="row" *ngIf="!cargando">
+  <div class="col-md-12 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="row col-md-12">
+          <div class="col-md-6">
+            <h6 class="card-title">Listado de Usuarios</h6>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table datatable [dtOptions]="dtOptions" class="display responsive table table-striped table-bordered row-border hover" cellspacing="0" width="100%">
+            <thead class="thead-dark">
+            <tr>
+              <th>#</th>
+              <th>Nombres</th>
+              <th>Apellidos</th>
+              <th>Identificación</th>
+              <th>Dirección</th>
+              <th>Tel. Celular</th>
+              <th>Tel. Fijo</th>
+              <th>Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let registro of usuarios['datos']; let i = index">
+              <td> {{ i + 1 }} </td>
+              <td> {{ registro.nombres }} </td>
+              <td> {{ registro.apellidos }} </td>
+              <td> {{ registro.numero_identificacion }} </td>
+              <td> {{ registro.direccion }} </td>
+              <td> {{ registro.nro_celular }} </td>
+              <td> {{ registro.nro_fijo }} </td>
+              <td> {{ registro.correo }} </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
