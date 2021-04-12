@@ -1,0 +1,37 @@
+<nav class="navbar">
+    <a href="" class="sidebar-toggler" (click)="toggleSidebar($event)">
+        <i class="feather icon-menu"></i>
+    </a>
+    <div class="navbar-content">
+        <ul class="navbar-nav">
+            <div class="nav-item nav-profile">Usuario:&nbsp;<b>{{ getUser }}</b></div>
+            <!-- fin de notificaciones o alertas -->
+            <li class="nav-item nav-profile" ngbDropdown>
+                <a class="nav-link" ngbDropdownToggle id="profileDropdown">
+                     <img src="https://via.placeholder.com/30x30" alt="profile">
+                </a>
+                <div ngbDropdownMenu aria-labelledby="profileDropdown">
+                    <div class="dropdown-header d-flex flex-column align-items-center">
+                        <div class="figure mb-3">
+                             <img src="https://via.placeholder.com/80x80" alt="">
+                        </div>
+                        <div class="info text-center">
+                            <p class="name font-weight-bold mb-0"> {{ getUser }} </p>
+                            <p class="email text-muted mb-0">Email: {{ getCorreoUser }} </p>
+                        </div>
+                    </div>
+                    <div class="dropdown-body">
+                        <ul class="profile-nav p-0 pt-3">
+                            <li class="nav-item">
+                                <a href="" (click)="onLogout($event)" class="nav-link">
+                                    <i class="feather icon-log-out"></i>
+                                    <span>Cerrar Sesión</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
